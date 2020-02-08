@@ -14,7 +14,7 @@ Implement the following screens using react and implement the api endpoints to m
 
 
 You can use any database of your choice, SQL/NOSQL.
-Make sure to write tests for all your endpoints and all your components. Make sure your folder structure is correct. You may refer to https://github.com/decadevs/bouncer for clarity.
+Make sure to write tests for all your endpoints andp all your components. Make sure your folder structure is correct. You may refer to https://github.com/decadevs/bouncer for clarity.
 
 Here is a resource to help out with testing:
 https://dev.to/itnext/how-you-can-use-react-testing-library-to-test-component-surface-49pm
