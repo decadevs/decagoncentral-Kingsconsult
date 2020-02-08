@@ -6,6 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+h1 {
+  font-size: larger;
+  text-transform: capitalize;
+  text-align: left;
+  font: Bold 30px/37px Boing;
+  letter-spacing: 0.6px;
+  color: #2d2f48;
+  opacity: 1;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
