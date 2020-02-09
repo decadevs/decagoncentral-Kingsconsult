@@ -1,6 +1,6 @@
 import Styled from 'styled-components'
 
-const Card1 = Styled.div`
+const navStyle = Styled.div`
     background: white;
     height: 200px;
     margin: 20px;
@@ -38,6 +38,6 @@ const Card1 = Styled.div`
     }
 `
 
-export default Card1;
+export default navStyle;
 
 
