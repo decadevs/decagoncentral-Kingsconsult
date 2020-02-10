@@ -16,7 +16,6 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 from .models import User
 from .serializers import UserSerializer
 
-
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -34,7 +33,6 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-    
 class LoginView(generics.CreateAPIView):
     """
     POST auth/login/
