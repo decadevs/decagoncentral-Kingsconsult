@@ -16,6 +16,36 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 from .models import User
 from .serializers import UserSerializer
 
+   
+class LoginView(generics.CreateAPIView):
+    """
+    POST auth/login/
+    """
+    # This permission class will overide the global permission
+    # class setting
+    permission_classes = (permissions.AllowAny,)
+
+    queryset = User.objects.all()
+    serializer_class = LoginSerializer
+
+    def get(self, request, *args, **kwargs):
+        email = request.data.get("email", "")
+        password = make_password(request.data.get("password", ""))
+        user = authenticate(request, email=email, password=password)
+        print(email, password, user)
+        if user is not None:
+            # login saves the user’s ID in the session,
+            # using Django’s session framework.
+            login(request, user)
+            serializer = TokenSerializer(data={
+                # using drf jwt utility functions to generate a token
+                "token": jwt_encode_handler(
+                    jwt_payload_handler(user)
+                )})
+            serializer.is_valid()
+            return Response(serializer.data)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
+    
     
 class RegisterUsersView(generics.CreateAPIView):
     """
