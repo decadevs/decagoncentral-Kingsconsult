@@ -31,8 +31,8 @@ const Session = () =>{
 
             {/* <Route exact path="/" component={Signup}></Route>
             <Route path="/sign-in" component={Login}></Route> */}
-          <Signup />
-          {/* <Login /> */}
+          {/* <Signup /> */}
+          <Login />
           </div>
         </div>
     );
