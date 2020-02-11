@@ -3,6 +3,7 @@ import "./style.css";
 import Card from "../../components/Card";
 import Card1 from "../../components/Card1";
 import Navbar from "../../components/navbar";
+import { Link } from "react-router-dom";
 
 const App = () => {
   return (
@@ -26,6 +27,10 @@ const App = () => {
           <Card1 title="squad 3" description="ths is squad two " />
           <Card1 title="squad 3" description="this is squad two " />
         </div>
+      </div>
+      <div>
+        <Link to='/login'>Login</Link>
+        <Link to='/'>Deca Dev</Link>
       </div>
     </div>
   );

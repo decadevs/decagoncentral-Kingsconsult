@@ -115,3 +115,103 @@
     position: relative;
   }
 
+
+
+  .App1 {
+    height: 100vh;
+    display: flex;
+    color: #F2F6FA;
+  }
+  
+  .App__Aside {
+    width: 40%;
+    color: #2D2F48;
+    background-color: #2D2F48;
+    background-image: url("../../assets/images/IMG_09791.png");
+    background-repeat: no-repeat;
+  }
+  .DecaLogo {
+    top: 38vh;
+    left: 6vw;
+    position: absolute;
+  }
+  
+  .DecaInfo {
+    top: 45vh;
+    left: 6vw;
+    position: absolute;
+    width: 28vw;
+    text-align: left;
+    font: Regular 21px/30px Nexa Bold;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+  
+  }
+  
+  .App__Form {
+    width: 60%;
+    background-color: #F2F6FA;
+    padding: 25px 40px;
+    overflow: auto;
+  }
+  
+  .PageSwitcher {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10%;
+  }
+  
+  .PageSwitcher__Item {
+    background-color: #4c5d72;
+    color: #9da6b1;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border: none;
+    outline: none;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .PageSwitcher__Item--Active {
+    background-color: #5ed0c0;
+    color: white;
+  }
+  
+  .PageSwitcher__Item:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .PageSwitcher__Item:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  
+  .FormTitle {
+    color: black;
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+  
+  .FormTitle__Link {
+    display: inline-block;
+    font-size: 1.7em;
+    margin: 0 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    font: Bold 30px/36px Lato;
+    letter-spacing: 0;
+    color: #2d2f48;
+    opacity: 1;
+  }
+  
+  .FormTitle__Link:first-child {
+    margin-left: 0;
+  }
+  
+  .FormTitle__Link--Active {
+    color: black;
+  }
+  
