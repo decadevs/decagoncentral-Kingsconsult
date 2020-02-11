@@ -1,2 +1,6 @@
 node_modules
 venv
+src/pages/Dashboard
+decagoncentralapi/api/__pycache__/
+decagoncentralapi/api/migrations/__pycache__/
+decagoncentralapi/__pycache__/

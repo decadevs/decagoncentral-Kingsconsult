@@ -20,6 +20,6 @@ from rest_framework_jwt.views import obtain_jwt_token
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('api/', include('api.urls')),
-    path('api-token-auth/', obtain_jwt_token, name='create-token'),
+    path('api-token-auth/',  obtain_jwt_token, name='create-token' ),
     
 ]
