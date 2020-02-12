@@ -43,9 +43,12 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +57,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 ROOT_URLCONF = 'decagoncentralapi.urls'
 
@@ -170,6 +177,12 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
     'JWT_AUTH_COOKIE': None,
 }
+
+# ACCCOUNT_UNIQUE_EMAIL = True
+# ACCOUNT_EMAIL_REQUIRED = False
+# ACCOUNT_AUTHENTIFICATION_METHOD = 'username'
+# ACCOUNT_EMAIL_VERIFICATION = True
+# AUTH_USER_MODEL = 'Users.user'
 
 
 # Internationalization
