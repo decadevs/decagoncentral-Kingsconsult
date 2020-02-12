@@ -33,9 +33,6 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
 class LoginView(generics.CreateAPIView):
-    """
-    POST auth/login/
-    """
     # This permission class will overide the global permission
     # class setting
     permission_classes = (permissions.AllowAny,)
