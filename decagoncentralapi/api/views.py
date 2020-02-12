@@ -11,7 +11,6 @@ from django.contrib.auth.hashers import make_password
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
-# posts/views.py
 
 from .models import User
 from .serializers import UserSerializer
@@ -34,9 +33,6 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
 class LoginView(generics.CreateAPIView):
-    """
-    POST auth/login/
-    """
     # This permission class will overide the global permission
     # class setting
     permission_classes = (permissions.AllowAny,)
@@ -48,7 +44,7 @@ class LoginView(generics.CreateAPIView):
         email = request.data.get("email", "")
         password = make_password(request.data.get("password", ""))
         user = authenticate(request, email=email, password=password)
-        print(email, password, user)
+        print(user)
         if user is not None:
             # login saves the user’s ID in the session,
             # using Django’s session framework.

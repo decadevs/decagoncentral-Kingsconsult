@@ -1,10 +1,30 @@
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
+
 
 import logo from "../../assets/images/decagonlogo.png";
 import "./style.css";
 
 const Login = () => {
+  const [userinfo, setUserinfo] = useState({email:"", password:""});
+
+  const loginState = event => {
+    console.log(event.target.value)
+    setUserinfo({...userinfo, [event.target.name] : event.target.name})
+  }
+
+  const login = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:8000/api/', {
+      method: 'POst',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(userinfo)
+    })
+    .then(data => data.json())
+    .then(data => {console.log(data.token)})
+    .catch(error => console.log(error));
+  }
+
   return (
     <Router>
       <div className="App1">
@@ -30,31 +50,31 @@ const Login = () => {
                 </label>
               </div>
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">
+                <label className="FormField__Label" htmlFor="email"> 
                   Email:
                 </label>
                 <input
                   type="email"
                   id="email"
                   className="FormField__Input"
-                  name="email"
+                  name="email" onChange={loginState}
                 />
               </div>
 
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">
+                <label className="FormField__Label" htmlFor="password"> 
                   Password:
                 </label>
                 <input
                   type="password"
                   id="password"
                   className="FormField__Input"
-                  name="password"
+                  name="password" onChange={loginState}
                 />
               </div>
 
               <div className="FormField">
-                <button className="FormField__Button mr-20">Login</button>{" "}
+                <button className="FormField__Button mr-20" onClick={login}>Login</button>
                 <Link to="/register" className="FormField__Link">
                   Create an account
                 </Link>
