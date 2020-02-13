@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React from "react";
+import React, {useState} from "react";
 import Helmet from "react-helmet";
 
 import Dashboard from "./pages/Dashboard";
@@ -8,8 +8,9 @@ import Login from "./pages/Login";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+
 function App() {
-  // const [userinfo, setUserinfo] = useState();
+  const [token, setToken] = useState('');
   return (
     <Router>
       <div className="App">
