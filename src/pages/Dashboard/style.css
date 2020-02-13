@@ -1,0 +1,28 @@
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.decacentral {
+    top: 2vh;
+    left: 25vw;
+    position: absolute;
+}
+.multiple_cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    top: 8vh;
+    left: 10vw;
+    position: relative;
+
+}
+.small_cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
